@@ -56,7 +56,7 @@ const Register=()=>{
    const getSingecustomer = async(id)=>{
         const response = await axios.get(`http://localhost:5000/singleuser/${id}`);
         if (response.status===200) {
-            setState({...response.data})
+            setState(response.data[0])
         }
     
 }
@@ -73,18 +73,18 @@ return (
         
         <form  onSubmit={handleSubmit}>
             <div className='inputdiv'>
-            <label>Food type:</label>
-            <input type="text" placeholder='Enter food type' id="fname" name="ftype" required onChange={handleInputChange} value={ftype}/></div>
+            <label style={{marginLeft: "1.6rem"}}>Food type:</label>
+            <input type="text" style={{marginLeft: "0rem", paddingRight: "0.001rem"}} placeholder='Enter food type' id="fname" name="ftype" required onChange={handleInputChange} value={ftype}/></div>
             <div className='inputdiv'>
-            <label>Quantity:</label>
+            <label style={{marginLeft: "1.6rem"}}>Quantity:</label>
             <input type="text" placeholder='Enter quantity' id="sname" name="quantity" required onChange={handleInputChange} value={quantity}/></div>
             <div className='inputdiv'>
-            <label>Price:</label>
-            <input type="text" placeholder='Enter price' id="phonenumber" name="price" required onChange={handleInputChange} value={price}/></div>
+            <label style={{marginLeft: "1.6rem"}}>Price:</label>
+            <input type="text" style={{marginLeft: "1.4rem", paddingRight: "0.8rem"}}  placeholder='Enter price' id="phonenumber" name="price" required onChange={handleInputChange} value={price}/></div>
             
-            <div className='inputdiv'><label>Ratings:</label>
-            <input type="text" placeholder='Enter your ratings' name="ratings" id="ratings" required onChange={handleInputChange} value={ratings}/></div>
-             <input type="submit" value={id ? "update" : "Register"}/>
+            <div className='inputdiv'><label style={{marginLeft: "1.6rem"}}>Ratings:</label>
+            <input type="text" style={{paddingRight: "1rem"}} placeholder='Enter your ratings' name="ratings" id="ratings" required onChange={handleInputChange} value={ratings}/></div>
+             <input type="submit" style={{marginLeft: "1.5rem", paddingRight: "9rem",paddingLeft: "9rem"}} value={id ? "update" : "Register"}/>
              
         </form>
         </div>
